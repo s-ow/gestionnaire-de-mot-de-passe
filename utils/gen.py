@@ -17,8 +17,9 @@ def newchoix(option):
         options.append(option)
 
 def gen(len, options):
+    chars = ""
     if "min" in options:
-        chars = string.ascii_lowercase
+        chars += string.ascii_lowercase
     if "maj" in options:
         chars += string.ascii_uppercase
     if "spe" in options:
@@ -50,8 +51,10 @@ def generateur(window):
 
     nbr = StringVar()
 
+    a = Label(window, text="Nombre de caractères :", fg=fg, bg=bg)
+    a.grid(row=2, column=0)
     nbr = Entry(window, width=20)
-    nbr.grid(row=2, columnspan=2)
+    nbr.grid(row=2, column=1)
 
     def gene(len, options):
         modp = gen(len, options)
